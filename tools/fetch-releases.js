@@ -36,6 +36,12 @@ async function main() {
 
   await fs.remove(file)
   await fs.outputFile(file, JSON.stringify(releases))
+
+  console.log('Updating tests with new expected version count.')
+
+  const versionSpecPath = path.resolve(__dirname, '..', 'tests', 'renderer', 'versions-spec.ts')
+  const versionSpec = await fs.readFile(versionSpecPath)
+  await fs.writeFile(versionSpecPath, versionSpec.replace(/(const expectedVersionCount =) \d+;/m, `$1 ${releases.length};`))
 }
 
 main()
