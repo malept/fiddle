@@ -40,7 +40,7 @@ async function main() {
   console.log('Updating tests with new expected version count.')
 
   const versionSpecPath = path.resolve(__dirname, '..', 'tests', 'renderer', 'versions-spec.ts')
-  const versionSpec = await fs.readFile(versionSpecPath)
+  const versionSpec = (await fs.readFile(versionSpecPath)).toString()
   await fs.writeFile(versionSpecPath, versionSpec.replace(/(const expectedVersionCount =) \d+;/m, `$1 ${releases.length};`))
 }
 
