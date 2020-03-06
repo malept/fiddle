@@ -16,7 +16,7 @@ import {
 import { mockFetchOnce } from '../utils';
 
 // DO NOT MODIFY WITHOUT EDITING tools/fetch-releases.js AS WELL.
-const expectedVersionCount = 315;
+const expectedVersionCount = 320;
 
 const mockVersions: Array<Partial<ElectronVersion>> = [
   { version: 'test-0', localPath: '/test/path/0' },
