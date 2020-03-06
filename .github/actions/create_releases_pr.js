@@ -18,6 +18,7 @@ async function main () {
       repo,
       title: 'build: update Electron releases JSON',
       base: 'master',
+      head: 'update-releases',
       body: 'Auto-update from GitHub Actions.',
       maintainer_can_modify: true
     })
