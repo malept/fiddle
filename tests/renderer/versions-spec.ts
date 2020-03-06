@@ -15,7 +15,7 @@ import {
 } from '../../src/renderer/versions';
 import { mockFetchOnce } from '../utils';
 
-// DO NOT MODIFY WITHOUT EDITING tools/fetch-releases.js AS WELL.
+// DO NOT MANUALLY MODIFY WITHOUT EDITING tools/fetch-releases.js AS WELL.
 const expectedVersionCount = 315;
 
 const mockVersions: Array<Partial<ElectronVersion>> = [
