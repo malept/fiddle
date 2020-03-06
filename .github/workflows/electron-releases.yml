@@ -43,7 +43,7 @@ jobs:
           git diff --cached
           git commit -m "build: update Electron releases JSON"
           git push origin update-releases
-          node .github/actions/create_releases_pr.js
+          node --unhandled-rejections=strict .github/actions/create_releases_pr.js
         else
           echo No update needed
         fi
