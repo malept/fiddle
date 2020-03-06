@@ -12,7 +12,7 @@ async function main () {
     head: `${owner}:update-releases`
   })
 
-  if (prs.length === 0) {
+  if (prs.data.length === 0) {
     const pr = await octokit.pulls.create({
       owner,
       repo,
@@ -24,7 +24,7 @@ async function main () {
     console.log('Pull request created:', pr.html_url)
   } else {
     console.log(prs)
-    console.log('Pull request updated:', prs.first.html_url)
+    console.log('Pull request updated:', prs.data[0].html_url)
   }
 }
 
