@@ -23,6 +23,7 @@ async function main () {
     })
     console.log('Pull request created:', pr.html_url)
   } else {
+    console.log(prs)
     console.log('Pull request updated:', prs.first.html_url)
   }
 }
