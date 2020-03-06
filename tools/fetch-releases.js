@@ -39,9 +39,12 @@ async function main() {
 
   console.log('Updating tests with new expected version count.')
 
-  const versionSpecPath = path.resolve(__dirname, '..', 'tests', 'renderer', 'versions-spec.ts')
-  const versionSpec = (await fs.readFile(versionSpecPath)).toString()
-  await fs.writeFile(versionSpecPath, versionSpec.replace(/(const expectedVersionCount =) \d+;/m, `$1 ${releases.length};`))
+  const metadata = {
+    expectedVersionCount: releases.length,
+    lastElectronVersion: releases[releases.length - 1].version
+  }
+  const releasesMetadataPath = path.resolve(__dirname, '..', 'tests', 'fixtures', 'releases-metadata.json')
+  await fs.writeJson(releasesMetadataPath, metadata, { spaces: 2 })
 }
 
 main()

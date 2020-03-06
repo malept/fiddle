@@ -15,8 +15,7 @@ import {
 } from '../../src/renderer/versions';
 import { mockFetchOnce } from '../utils';
 
-// DO NOT MANUALLY MODIFY WITHOUT EDITING tools/fetch-releases.js AS WELL.
-const expectedVersionCount = 315;
+const { expectedVersionCount } = require('../fixtures/releases-metadata.json');
 
 const mockVersions: Array<Partial<ElectronVersion>> = [
   { version: 'test-0', localPath: '/test/path/0' },
