@@ -4,7 +4,7 @@ const octokit = new Octokit()
 
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/')
 
-await function main () {
+async function main () {
   const prs = await octokit.pulls.list({
     owner,
     repo,
