@@ -1,7 +1,5 @@
 name: Auto-update Releases JSON file
-on:
-  schedule:
-    - cron: '0 0 * * *'
+on: push
 jobs:
   autoupdate:
     runs-on: ubuntu-latest
