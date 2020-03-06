@@ -29,6 +29,4 @@ async function main () {
   }
 }
 
-main().catch(err => {
-  throw err
-})
+main()
